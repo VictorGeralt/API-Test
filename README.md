@@ -34,7 +34,7 @@ Logo a API pode ser iniciada com o comando:
 npm start
 ```
 
-![1](img\execucao.png)
+<img src="img\execucao.png">
 
 ## Funcionamento
 
@@ -54,7 +54,7 @@ routes.post('/add', API_RestController.addPessoa)
 
 Nessa é possivel adicionar um novo componente no array pelo postman como por exemplo:
 
-![2](img\add.png)
+<img src="img\add.png">
 
 ```
 routes.delete('/delete/:id', API_RestController.deletePessoa)
@@ -68,7 +68,7 @@ routes.put('/put/:id', API_RestController.editPessoa)
 
 E por fim podemos trocar o componente do id informando colocando um outro no lugar
 
-![3](img\put.png)
+<img src="img\put.png">
 
 ### Segunda parte
 
