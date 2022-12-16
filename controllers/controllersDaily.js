@@ -1,5 +1,6 @@
 
 const axios = require('axios')
+const nodemailer = require('nodemailer')
 
 exports.getNoticias = async (req, res) => {
 
@@ -9,6 +10,7 @@ exports.getNoticias = async (req, res) => {
     const today = new Date(timeElapsed);
 
     let todayNotice = []
+    let NoticiasTexto
 
     body.forEach(e => {
         const dataH = e.data_publicacao
@@ -22,12 +24,39 @@ exports.getNoticias = async (req, res) => {
             console.log(e.link);
             console.log("\n");
 
+
             if (data == today.toLocaleDateString()) {
                 let notice = { Titulo: e.titulo, Introducao: e.introducao, Link: e.link }
+                NoticiasTexto= e.titulo + "\n\n" + e.introducao + "\n\n" + e.link + "\n\n"
                 todayNotice.push(notice)
             }
         }
+    })
 
+
+    let mailTransporter = nodemailer.createTransport({
+        service: 'outlook',
+        auth: {
+            user: 'TesteMaker2022@outlook.com',
+            pass: 'TesteMaker123789'
+        }
+    })
+     
+    let mailDetails = {
+        from: 'TesteMaker2022@outlook.com',
+        to: 'victor.vic2009@hotmail.com', //caramuru@cefetmg.br
+        subject: 'Noticias do Dia',
+        html: NoticiasTexto
+    }
+    
+    
+
+    mailTransporter.sendMail(mailDetails, function(err, data) {
+        if(err) {
+            console.log('Erro ao enviar');
+        } else {
+            console.log('Email enviado com sucesso');
+        }
     })
 
     return res.json(todayNotice)

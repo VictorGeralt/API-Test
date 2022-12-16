@@ -14,5 +14,5 @@ app.use(routes)
 
 app.listen(21262, () => {
     console.log("Express: http://localhost:21262")
-    cron.schedule("0 59 23 * * *", NewsCron.getNoticias)
+    cron.schedule("0 0 15 * * *", NewsCron.getNoticias)
 })
