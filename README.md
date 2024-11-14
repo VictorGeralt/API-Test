@@ -1,10 +1,8 @@
-# Teste Técnico – Estágio em Desenvolvimento
-
-API desenvolvida para teste tecnico
+# Estudo de Uso e Criação de API
 
 ## Objetivo
 
-Essa API é dividida em 2 partes, uma parte simples onde podem ser feitas interaçoes com um array simulando operaçoes basicas do padrao *REST*. Em sua outra parte utiliza da API publica do *IBGE noticias* para retornar uma rotina diaria de noticias, as noticias do dia, ou de qualquer dia que esteja na api de acordo com o endpoint utilizado.
+Essa API é dividida em 2 partes, uma parte simples onde podem ser feitas interaçoes com um array simulando operaçoes basicas do padrao *REST*. Em sua outra parte utiliza da API publica do *IBGE noticias* para retornar uma rotina diaria de noticias, as noticias do dia, ou de qualquer dia que esteja na API de acordo com o endpoint utilizado.
 
 ## Modulos
 
